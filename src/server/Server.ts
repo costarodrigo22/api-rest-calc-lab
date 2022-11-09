@@ -1,9 +1,9 @@
 import express from 'express';
+import { router } from './routes/index';
 
 const server = express();
 
-server.get('/', (req, res) => {
-	return res.send('Server is running!');
-});
+server.use(express.json());
+server.use(router);
 
 export { server };
